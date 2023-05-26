@@ -46,10 +46,42 @@ app.get("/post", async (res, req) => {
 });
 
 app.get("/posts", async (res, req) => {
-    return await prisma.post.findMany({
+    try {
+        return await prisma.post.findMany({
+            select: {
+                id: true,
+                title: true,
+                body: true
+            }
+        });
+    } catch (error) {
+        console.log(error, 2002);
+        console.log(error.message);
+        console.log(error.code, 2442);
+    }
+});
+
+app.get("/posts/:id", async (req, res) => {
+    return await prisma.post.findUnique({
+        where: { id: req.params.id },
         select: {
-            id: true,
-            title: true
+            body: true,
+            title: true,
+            comments: {
+                orderBy: {
+                    createdAt: "desc"
+                },
+                select: {
+                    id: true,
+                    message: true,
+                    parentId: true,
+                    createdAt: true,
+                    user: {
+                        id: true,
+                        name: true
+                    }
+                }
+            }
         }
     });
 });
@@ -63,6 +95,13 @@ app.get("/test", async (res, req) => {
             }
         })
     );
+
+    // return await prisma.User.findMany({
+    //     select: {
+    //         id: false,
+    //         name: true
+    //     }
+    // });
 });
 
 app.get("/test2", async (res, req) => {
