@@ -75,11 +75,11 @@ app.get("/posts/:id", async (req, res) => {
                     id: true,
                     message: true,
                     parentId: true,
-                    createdAt: true,
-                    user: {
-                        id: true,
-                        name: true
-                    }
+                    createdAt: true//,
+                    // user: {
+                    //     id: true,
+                    //     name: true
+                    // }
                 }
             }
         }

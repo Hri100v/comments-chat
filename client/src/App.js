@@ -8,19 +8,7 @@ function App() {
   return (
     <div className="container">
       <Routes>
-        <Route path="/posts" element={<h1>Extra Content</h1>} />
-      </Routes>
-      <p>
-        some
-        text
-        here
-        and
-        bellow
-        too
-      </p>
-      <Routes>
         <Route path="/" element={<PostList />} />
-        {/* <Route path="/posts/:id" element={<h1>Post</h1>} /> */}
         <Route path="/posts/:id" element={
           <PostProvider>
             <Post />

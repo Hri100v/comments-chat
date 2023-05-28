@@ -1,7 +1,9 @@
 import { makeRequest } from "./makeReqest";
 
 export function getPosts() {
-    // console.log("getPosts()");
-    // debugger;
     return makeRequest("/posts");
+};
+
+export function getPost(id) {
+    return makeRequest(`/posts/${id}`);
 };
