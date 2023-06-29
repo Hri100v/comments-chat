@@ -7,3 +7,10 @@ body {
 .container {
     padding: 10px 25px;
 }
+
+.comment-stack {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #bcdeef;
+    border-radius: 10px;
+}

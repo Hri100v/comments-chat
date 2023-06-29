@@ -75,11 +75,18 @@ app.get("/posts/:id", async (req, res) => {
                     id: true,
                     message: true,
                     parentId: true,
-                    createdAt: true//,
+                    createdAt: true,
                     // user: {
                     //     id: true,
                     //     name: true
                     // }
+                    userId: true,
+                    user: {
+                        select: {
+                            id: true,
+                            name: true
+                        }
+                    }
                 }
             }
         }
