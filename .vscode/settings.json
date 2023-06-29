@@ -1,0 +1,7 @@
+{
+    "javascript.preferences.quoteStyle": "double",
+    "typescript.preferences.quoteStyle": "double",
+    "files.autoSave": "off",
+    "editor.formatOnSave": true,
+    "files.refactoring.autoSave": false
+}
